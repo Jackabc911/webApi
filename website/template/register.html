@@ -1,0 +1,43 @@
+{{ define "body" }}
+
+    <div class="h5 bg-primary text-white text-center p-2 m-2"> Введите данные для регистрации. </div>
+    {{ if gt (len .Errors) 0 }}
+        <ul class="text-dange mt-3">
+            {{ range .Errors }}
+                <li> {{ . }} </li>
+            {{ end }}
+        </ul>
+    {{ end }}
+
+<form method="post" class="m-2">
+    <div class="form-group my-1">
+        <label>Ваше логин:</label>
+        <input name="login" class="form-control" value="{{ .Login }}" />
+    </div>
+    <div class="form-group my-1">
+        <label>Ваш пароль:</label>
+        <input name="password" class="form-control" value="{{ .Password }}" />
+    </div>
+    <div class="form-group my-1">
+        <label>Ваш пароль повторно:</label>
+        <input name="passwordrety" class="form-control" value="{{ .PasswordRety }}" />
+    </div>
+    <div class="form-group my-1">
+        <label>Ваш email:</label>
+        <input name="email" class="form-control" value="{{ .Email }}" />
+    </div>
+    <div class="form-group my-1">
+        <label>Ваш число:</label>
+        <input name="secretnumber" class="form-control" value="{{ .Secretnumber }}" />
+    </div>
+    <!-- <div class="form-group my-1">
+        <label>Выберите что-нибудь.</label>
+        <select name="mailorcall" class="form-select">
+            <option value="true" {{ if .MailOrCall }} selected {{ end }}> Что-нибудь номер 1 </option>
+            <option value="false" {{ if .MailOrCall }} selected {{ end }}> Что-нибудь номер 2 </option>
+        </select>
+    </div> -->
+    <button class="btn btn-primary mt-3" type="submit"> Зарегистрироваться! </button>
+</form>
+
+{{ end }}

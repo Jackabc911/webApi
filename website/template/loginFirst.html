@@ -1,0 +1,18 @@
+{{ define "body" }}
+
+    <div class="h5 bg-primary text-white text-center p-2 m-2"> Введите данные для регистрации. </div>
+    
+
+<form method="post" class="m-2">
+    <div class="form-group my-1">
+        <label>Ваше логин:</label>
+        <input name="login" class="form-control" value="{{ .Login }}" />
+    </div>
+    <div class="form-group my-1">
+        <label>Ваш пароль:</label>
+        <input name="password" class="form-control" value="{{ .Password }}" />
+    </div>
+    <button class="btn btn-primary mt-3" type="submit"> Login </button>
+</form>
+
+{{ end }}
